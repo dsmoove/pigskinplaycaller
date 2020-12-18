@@ -1,7 +1,7 @@
 # Pigskin Play Caller
 Author: David Shin
 
-![img](./images/banner new.jpg)
+![img](./images/bannernew.jpeg)
 
 
 ## The Business Problem
