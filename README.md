@@ -8,7 +8,10 @@ Author: David Shin
 
 Analytics and data continues to grow every year. In decades prior, teams and coaches relied on anecdotal decisions and the athletic abilities of their players to swing the outcome of the game. However, in recent years, more and more data has been collected in order to improve decision making and training. On the sidelines, we see tablets and Ipads in coaches hands. From up above, we see additional strategists probing the field and court for any observations that will contribute to winning. 
 
-It has become important that we make decisions with data to back them up. These decisions must be made quickly but carefully. Football teams are now growing their manpower and technology when it comes to data. 
+![img](./images/coachipad.jpg)
+![img](./images/download.jpg)
+
+It has now become commonplace to see coaches wielding a tablet in hand. The accessibility to data from the sidelines has become so easy and must be considered when it comes to strategy. These decisions must be made quickly but carefully. Football teams are now growing their manpower and technology when it comes to data. 
 
 This project aims to create a model that will capture any observations on the field including game situations and offense, that will help to make a better decision on defensive side of the ball. The model looks at the positioning of the players of the offense on the field and the personnel on the field. The model also looks at the game situation of the down situation and the yards needed for a first down. The goal of this model is to address the issue of making decisions analytically and quickly. Teams can quickly confirm or reject their anecdotal decisions with the use of this model. 
 
