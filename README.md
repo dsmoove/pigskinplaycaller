@@ -78,6 +78,9 @@ Finally, I ran a GridSearch on my GradiestBoosterRegression model to find the id
 
 Just to see if there was any significant improvement, I ran a GridSearch on my XGRegression model, but this showed very little improvement from my initial model run. 
 
+Overall, the best performing model was the GradiestBoosterRegression Model with GridSearch. The model produced an RMSE of 0.002698. Although, I believe if I wanted to keep my model simple and the results much more interpretable, a simple linear regression model would not fair so poorly. The linear regression model was able to output an RMSE of 0.002944. Going forward, I will most likely use both models to calculate estimated EPA by coverage and use a group vote to create a recommendation.
+
+
 ## Next Steps
 
 I'd like to take into account the weather from the day of the event into account. It's well known that weather factors such as snow/rain/wind can highly impact the decisions made during the game when it comes to deciding between passing and running. 
