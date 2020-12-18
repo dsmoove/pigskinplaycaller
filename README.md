@@ -35,10 +35,17 @@ I also wanted to see the EPA by coverage. It was evident that there are slight i
 
 ![img](./images/coverageepa.png)
 
-However, the most important impression was that the use of personnel also made a big impact on the EPA. 
+I wanted to take a deeper look into the coverages utilized. It becomes pretty evident that depending on the down situation the usage of coverage will differ. As shown below, the standard 1st down situation is most of the time a cover 3, but not all the time. This is supportive of the need for a good model because the yardage situations will differ on 1st down depending on penalties.
+
+![img](./images/coveragebydown.png)
+
+However, the most important impression was that the use of personnel also made a big impact on the EPA. It looks like there are clear situations and personnel schemes that can swing the EPA. With the use of our model, we can isolate the situations to when we use which personnel package.
 
 ![img](./images/personnelepa.png)
 
+I once again took a deeper look into the personnel breakdown. Although the 4/2/5 defensive scheme is the most utilized, there were other teams that utilized a 3/3/5 on various yardage situations as well. 
+
+![img](./images/personnelbydown.png)
 
 ## Modeling Process
 
