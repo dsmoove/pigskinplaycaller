@@ -51,7 +51,7 @@ I once again took a deeper look into the personnel breakdown. Although the 4/2/5
 
 ### Train Test Split
 
-First the data was cleaned to ensure we only review data from prior to the ball snap. We merged our data from the NFL with the data from Telemetry sports. Next, I train-test split our data and ran the below models.
+First the data was cleaned to ensure we only review data from prior to the ball snap. We merged our data from the NFL with the data from Telemetry sports. Then, I scaled my data and then, I train-test split our data and ran the below models.
 
 ### Models
 
