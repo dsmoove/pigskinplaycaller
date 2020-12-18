@@ -1,8 +1,8 @@
 # Pigskin Play Caller
 David Shin
 
-![img](./images/banner.png)
-![img](./images/negwordcloud.png)
+![img](./images/banner.jpg)
+
 
 ## The Business Problem
 
@@ -78,13 +78,14 @@ Potential injury news could also be used to see if potential players were target
 
 I would also like to make a webapp or platform that would make it easier to quickly plug in the dimensions needed to output the recommended defense.
 
-``
+
+```
 ## Navigation
 ├── images
 ├── data
 ├── field.ipynb
 └── code.ipynb
-``
+```
 
 ## Credits
 
