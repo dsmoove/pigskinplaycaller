@@ -6,23 +6,33 @@ Author: David Shin
 
 ## The Business Problem
 
-Analytics and data continues to grow every year. In decades prior, teams and coaches relied on anecdotal decisions and the athletic abilities of their players to swing the outcome of the game. However, in recent years, more and more data has been collected in order to improve decision making and training. On the sidelines, we see tablets and Ipads in coaches hands. From up above, we see additional strategists probing the field and court for any observations that will contribute to winning. 
+Analytics and data in sports continues to grow every year. In decades prior, Football teams and coaches relied on anecdotal decisions and the athletic abilities of their players to swing the outcome of the game. However, in recent years, more and more data has been collected in order to improve decision making and training. On the sidelines, we see tablets and Ipads in coaches' hands. From up above, we see additional strategists probing the field and court for any observations that will contribute to winning. 
 
 ![img](./images/coachipad.jpg)
 ![img](./images/download.jpg)
 
-It has now become commonplace to see coaches wielding a tablet in hand. The accessibility to data from the sidelines has become so easy and must be considered when it comes to strategy. These decisions must be made quickly but carefully. Football teams are now growing their manpower and technology when it comes to data. 
+Because of the way football is formatted, it allows teams to take time between plays to make adjustments and calculations. Currently, there aren't many ways to quickly make analytical decisions.  In conjunction with data science, football teams can utilize models to make these on the fly decisions and adjustments based off the situation on the field. The situation includes factors such as on field players, positioning of those players, game situation (current down, yards left to first down), weather, and stadium setting. All these factors impact the success of a play and can be used to make ideal decisions.
 
-This project aims to create a model that will capture any observations on the field including game situations and offense, that will help to make a better decision on defensive side of the ball. The model looks at the positioning of the players of the offense on the field and the personnel on the field. The model also looks at the game situation of the down situation and the yards needed for a first down. The goal of this model is to address the issue of making decisions analytically and quickly. Teams can quickly confirm or reject their anecdotal decisions with the use of this model. 
+This project aims to create a model that will capture any observations on the field including game situations and offense, that will help to make a better decision on defensive side of the ball. The model looks at the positioning of the players on offense on the field and the different types personnel on the field (WR/TE/RB). Teams employ different offensive personnel breakdowns (WR/TE/RB). WR is Wide Receiver, TE is Tight End, and RB is Running Back. The model also looks at the game situation of the down situation and the yards needed for a first down. The goal of this model is to address the issue of making decisions analytically and quickly by calculating the EPA of the next play and recommending the coverage that predicts the lowest EPA. EPA is short for Expected Points Added, which will be the target variable for our model. 
 
 
 ## Data
 
-The first piece of data comes from a Kaggle dataset from the NFL. The data provides play-by-play data from Week 1-Week 17 of the 2018 NFL season. The data provides positioning of the offense and the number of players by position on the field. The data provides specific numbers of players on offense in which position (WR/TE/RB) and also the number of personnel on defense (DB/LB/DL). Our target variable in this dataset is going to be EPA, or Expected Points Added. Expected Points Added is calculated by contrasting the situation of the play (Down/Distance/Field Position) at the start of play and the end of the play. The metric looks to calculate how much each play contributes to the score. This is necessary because in Football, a 10 yard gain on first down from my own 10 yard line is different from a 5 yard gain on the opponent 10 yard line on 3rd and 1. This metrics allows us to evaluate the impact of each play to the overall result of the game. 
+The first piece of data comes from a Kaggle dataset from the NFL. The data provides play-by-play data from Week 1-Week 17 of the 2018 NFL season. The data provides positioning of the offense and the number of players by position on the field. The data provides specific numbers of players on offense in which position (WR/TE/RB) and also the number of personnel on defense (DB/LB/DL). 
+
+### Target Variable
+
+Our target variable in this dataset is going to be EPA, or Expected Points Added. Expected Points Added is calculated by contrasting the situation of the play (Down/Distance/Field Position) at the start of play and the end of the play. The metric looks to calculate how much each play contributes to the score. This is necessary because in Football, a 10 yard gain on first down from my own 10 yard line is different from a 5 yard gain on the opponent 10 yard line on 3rd and 1. This metrics allows us to evaluate the impact of each play to the overall result of the game. 
+
+https://www.kaggle.com/c/nfl-big-data-bowl-2021/data
 
 The second piece of data comes from Telemetry sports. Telemetry sports was able to look into Week 1 of the 2018 NFL season and provide coverages used by each team. Coverages are the scheme utilized by the defense guarding the deeper/passing portion fo the field. 
 
+https://www.kaggle.com/tombliss/additional-data-coverage-schemes-for-week-1
+
 The last piece of data was provided by Football Outsiders. This provides ranks for each team in terms of offensive/defensive output from the 2018 season. The teams have ranks for their offense and additionally I will look into using strength by position from this dataset.
+
+https://twitter.com/nflfastr?lang=en
 
 ## EDA
 
@@ -54,11 +64,11 @@ I once again took a deeper look into the personnel breakdown. Although the 4/2/5
 
 ### Train Test Split
 
-First the data was cleaned to ensure we only review data from prior to the ball snap. We merged our data from the NFL with the data from Telemetry sports. Then, I scaled my data and then, I train-test split our data and ran the below models.
+First the data was cleaned to ensure we only review data from prior to the ball snap. I merged the data from the NFL with the data from Telemetry sports. Then, I scaled my data and then, I train-test split our data and ran the below models.
 
 ### Models
 
-I trained 6 different machine learning classification models to predict whether a given shot would go in. The models I used were the following:
+I trained 6 different machine learning classification models to predict the EPA of a given play. The models I used were the following:
 
 - Logistic Regression
 - Gradient Boosting
@@ -67,19 +77,30 @@ I trained 6 different machine learning classification models to predict whether 
   - GridSearch
 - RandomForest
 
+### Linear Regression
 
 I ran a basic linear regression model. After finding the RMSE and MSE. Afterwards, I decided to run various other models to test RMSE and see improved scores. 
 
+### Decision Tree Regression
+
 My second model was the DecisionTreeRegressor Model. After noticing the RMSE was a higher value, I decided to abandon this model and move onto another model.
 
+### Random Forest Regression 
 Third model was a RandomForestRegression Model. RMSE was slightly worse than our initial linear regression model. I also ran a GradiestBoosterRegressor model and the RMSE was similar or slightly better than my initial LinearRegression model. Lastly, I tried an XGboost which showed no improvement.
+
+### Gradient Booster Regression
 
 Finally, I ran a GridSearch on my GradiestBoosterRegression model to find the ideal parameters for my model. My GridSearch returned better parameters for my learning rate, max depth, max features, and n estimators for my GradientBooster model. This turned out to be my best performing model along with my initial linearregression.
 
-Just to see if there was any significant improvement, I ran a GridSearch on my XGRegression model, but this showed very little improvement from my initial model run. 
+### GridSearch
+
+Just to see if there was any significant improvement, I ran a GridSearch on my XGRegression model and my GradientboosterModel. Through GridSearch, I was able to marginally improve the performance of my GradiestBoosterModel and it assisted in developing my final model.
+
+## Conclusion
+
+### Best Model 
 
 Overall, the best performing model was the GradiestBoosterRegression Model with GridSearch. The model produced an RMSE of 0.002698. Although, I believe if I wanted to keep my model simple and the results much more interpretable, a simple linear regression model would not fair so poorly. The linear regression model was able to output an RMSE of 0.002944. Going forward, I will most likely use both models to calculate estimated EPA by coverage and use a group vote to create a recommendation.
-
 
 ## Next Steps
 
