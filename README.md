@@ -11,9 +11,9 @@ Analytics and data in sports continues to grow every year. In decades prior, Foo
 ![img](./images/coachipad.jpg)
 ![img](./images/download.jpg)
 
-Because of the way football is formatted, it allows teams to take time between plays to make adjustments and calculations. Currently, there aren't many ways to quickly make analytical decisions.  In conjunction with data science, football teams can utilize models to make these on the fly decisions and adjustments based off the situation on the field. The situation includes factors such as on field players, positioning of those players, game situation (current down, yards left to first down), weather, and stadium setting. All these factors impact the success of a play and can be used to make ideal decisions.
+Because of the way football is formatted, it allows teams to take time between plays to make adjustments and calculations. Currently, there aren't many ways to quickly make analytical decisions.  In conjunction with data science, football teams can utilize models to make these on the fly decisions and adjustments based off the situation on the field. The situation includes factors such as on field players, positioning of those players, game situation (current down, yards left to first down), weather, and stadium setting. All these factors have an impact on the success of a play and can be used to make ideal decisions.
 
-This project aims to create a model that will capture any observations on the field including game situations and offense, that will help to make a better decision on defensive side of the ball. The model looks at the positioning of the players on offense on the field and the different types personnel on the field (WR/TE/RB). Teams employ different offensive personnel breakdowns (WR/TE/RB). WR is Wide Receiver, TE is Tight End, and RB is Running Back. The model also looks at the game situation of the down situation and the yards needed for a first down. The goal of this model is to address the issue of making decisions analytically and quickly by calculating the EPA of the next play and recommending the coverage that predicts the lowest EPA. EPA is short for Expected Points Added, which will be the target variable for our model. 
+This project aims to create a model that will capture any observations on the field including game situations and offense, that will help to make a better decision on defensive side of the ball. The model looks at the positioning of the players on offense on the field and the different types personnel on the field (WR/TE/RB). Teams employ different offensive personnel breakdowns (WR/TE/RB). These positions will be explained in more detail later. The model also looks at the game situation of the down situation and the yards needed for a first down. The goal of this model is to address the issue of making decisions analytically and quickly by calculating the EPA of the next play and recommending the coverage that predicts the lowest EPA. EPA is short for Expected Points Added, which will be the target variable for our model.
 
 
 ## Data
@@ -33,6 +33,29 @@ https://www.kaggle.com/tombliss/additional-data-coverage-schemes-for-week-1
 The last piece of data was provided by Football Outsiders. This provides ranks for each team in terms of offensive/defensive output from the 2018 season. The teams have ranks for their offense and additionally I will look into using strength by position from this dataset.
 
 https://twitter.com/nflfastr?lang=en
+
+## Glossary
+
+QB - Quarterback
+
+WR - Wide Receiver
+
+RB - Runningback
+
+LB - Linebacker
+
+DB - Defensive Back
+
+DL - Defensive Lineman
+
+Down - Another word for a play. Teams are given four downs to either score or gain an additional 10 yards. Once 10 yards are gained, the downs start over at four. If 10 yards are not gained or points are not scored, the opposing team gets the possession of the football.
+
+EPA - Expected Points Added
+
+Coverage - Scheme employed by the defense in regards to the field positioning of the players in the deeper regions of the field
+
+Personnel - Assortment of players employed by the offense or defense. These can be different depending on the situation on the field
+
 
 ## EDA
 
