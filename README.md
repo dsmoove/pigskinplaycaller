@@ -123,11 +123,13 @@ Just to see if there was any significant improvement, I ran a GridSearch on my X
 
 ### Best Model 
 
-Our best model was the tuned GradientBoostingRegressor model. Other models were able to output similiar or slightly better values of RMSE, but according to other evaluations, they were overfitting to our data and were not going to produce ideal results. I compared RMSE from the training data and testing data and found that the GradiestBoostingRegressior was the least overfit and best performing. The results from our GBR model were outputting RMSE values of 0.00357. Our STDEV for our target variable in our dataset was 0.079. Our RMSE / STDEV is 0.0449 showing that our results are fairly good! A light webapp was created to input variables in the field in order to quickly generate a predictor model for best coverage. Coaches, or actually anyone!, can use this to find best coverage scheme to counter the current situation on the field. The app is attached in the code!
+Our most optimal model was the XGBRegressor model. After GridSearch, we were able to further improve the performance of our model. In comparison to our STDEV and mean, our results came out to about 1.04 and 0.14 respectively. According to our initial looks during EDA, our target variable has somewhat of a normal distribution. Currently, our model shows promise. However due our RMSE covering about 1 standard deviation in error (about 70% of our data), our model will require more tuning before being put into actual practice.  Next steps will require gathering coverage from other weeks of data in order to make our models more accurate. Additional next steps are laid out below.
 
-## Next Steps
+### Next Steps
 
-I'd like to look into finding additional data from the NFL on other seasons. Currently, my dataset would only be a predictor for the 2018 season, however if I were to capture data and apply my predictor to a 2020 dataset, I would potentially be able to predict current games. 
+I'd like to look into finding additional data from the NFL on other seasons. Currently, my dataset would only be a predictor for the 2018 season, however if I were to capture data and model with the 2020 dataset, I would potentially be able to predict current games. 
+
+With the increased dataset, I would also want to create a model that is specifically catered to each team. Right now, the model is taking a look at football as a whole however, with more data the model could be tuned to look at specific teams.
 
 Potential injury news could also be used to see if potential players were targetted. Injuries would impact player performance for certain games and could certainly affect stats such as EPA that normally wouldn't.
 
