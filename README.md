@@ -32,7 +32,7 @@ https://www.kaggle.com/tombliss/additional-data-coverage-schemes-for-week-1
 
 The last piece of data was provided by Football Outsiders. This provides ranks for each team in terms of offensive/defensive output from the 2018 season. The teams have ranks for their offense and additionally I will look into using strength by position from this dataset.
 
-https://twitter.com/nflfastr?lang=en
+https://github.com/guga31bb/nflfastR-data/tree/master/data
 
 ## Glossary
 
@@ -142,5 +142,5 @@ Potential injury news could also be used to see if potential players were target
 
 ## Credits
 
-Credits to user Robikscube for the Plotting Field/Player Position Chart
+
 
