@@ -100,6 +100,10 @@ I trained 6 different machine learning classification models to predict the EPA 
   - GridSearch
 - RandomForest
 
+#### Cross-Validation
+
+Cross validation was run on all our models to find overfitting.
+
 ### Linear Regression
 
 I ran a basic linear regression model. After finding the RMSE and MSE. Afterwards, I decided to run various other models to test RMSE and see improved scores. 
