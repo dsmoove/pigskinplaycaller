@@ -106,22 +106,23 @@ Cross validation was run on all our models to find overfitting.
 
 ### Linear Regression
 
-I ran a basic linear regression model. After finding the RMSE and MSE. Afterwards, I decided to run various other models to test RMSE and see improved scores. 
+I ran a basic linear regression model as a baseline model. This became a good model to serve as a comparison for future iterations. My baseline linear regression model wasn't overfit when initially cross-validated and the RMSE of the model came out to about 0.084. This was about 1.05 and 0.15 when compared to the standard deviation and the mean. Afterwards, I decided to run various other models to test RMSE and see improved scores. 
 
 ### Decision Tree Regression
 
-My second model was the DecisionTreeRegressor Model. After noticing the RMSE was a higher value, I decided to abandon this model and move onto another model.
+My second model was the DecisionTreeRegressor Model. When running initial cross-validation, the output was showing that the data was overfitting to the training set. Also after noticing the RMSE was a higher value, I decided to abandon this model and move onto another model.
 
 ### Random Forest Regression 
-Third model was a RandomForestRegression Model. RMSE was slightly worse than our initial linear regression model. I also ran a GradiestBoosterRegressor model and the RMSE was similar or slightly better than my initial LinearRegression model. Lastly, I tried an XGboost which showed no improvement.
+
+Third model was a RandomForestRegression Model. RMSE was slightly worse than our initial linear regression model. Also this model had a similar issue to the Decision Tree model, as the data was overfitting to the training data. Model performed slightly better than the DecisionTree but overall was dropped from further iterations. 
 
 ### Gradient Booster Regression
 
-Finally, I ran a GridSearch on my GradiestBoosterRegression model to find the ideal parameters for my model. My GridSearch returned better parameters for my learning rate, max depth, max features, and n estimators for my GradientBooster model. This turned out to be my best performing model along with my initial linearregression.
+My initial results on the GradientBoostingRegression model show that the model didn't overfit to results when comparing scores through cross-validation. Although the initial results of the GradientBoostingModel weren't better than my baseline linear regression model, performance improved after running GridSearch. My GridSearch returned better parameters for my learning rate, max depth, max features, and n estimators for my GradientBooster model. But after looking deeper into the results, it became evident that the model was outputting similar predictions multiple times. 
 
-### GridSearch
+### XGBoost
 
-Just to see if there was any significant improvement, I ran a GridSearch on my XGRegression model and my GradientboosterModel. Through GridSearch, I was able to marginally improve the performance of my GradiestBoosterModel and it assisted in developing my final model.
+My XGBoost model initially showed no signs of overfitting through cross-validation. The results were almost identical when comparing the training and test sets. Similar to my initial run on a GradientBooster, the model performed slightly worse than a LinearRegression. However, the results were promising enough to run Gridsearch. Results were good as they improved my results to an RMSE of 0.082 which was only 1.03 standard deviations or .144 means. This model was my best performing model after the initial LinearRegression overall. 
 
 ## Conclusion
 
