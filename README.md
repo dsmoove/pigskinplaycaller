@@ -129,6 +129,10 @@ Just to see if there was any significant improvement, I ran a GridSearch on my X
 
 Our most optimal model was the XGBRegressor model. After GridSearch, we were able to further improve the performance of our model. In comparison to our STDEV and mean, our results came out to about 1.04 and 0.14 respectively. According to our initial looks during EDA, our target variable has somewhat of a normal distribution. Currently, our model shows promise. However due our RMSE covering about 1 standard deviation in error (about 70% of our data), our model will require more tuning before being put into actual practice.  Next steps will require gathering coverage from other weeks of data in order to make our models more accurate. Additional next steps are laid out below.
 
+### Webapp
+
+A simple webapp has also been created. Users can input the variables needed to predict our target variable and a recommendation will be given on coverage scheme to use to counter the offense. These variables that the user needs to input include weather, game setting and offensive player personnel and position. 
+
 ### Next Steps
 
 I'd like to look into finding additional data from the NFL on other seasons. Currently, my dataset would only be a predictor for the 2018 season, however if I were to capture data and model with the 2020 dataset, I would potentially be able to predict current games. 
@@ -137,7 +141,6 @@ With the increased dataset, I would also want to create a model that is specific
 
 Potential injury news could also be used to see if potential players were targetted. Injuries would impact player performance for certain games and could certainly affect stats such as EPA that normally wouldn't.
 
-
 ```
 ## Navigation
 ├── images
@@ -145,8 +148,6 @@ Potential injury news could also be used to see if potential players were target
 ├── field.ipynb
 └── code.ipynb
 ```
-
-## Credits
 
 
 
